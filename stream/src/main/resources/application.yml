@@ -1,0 +1,32 @@
+server:
+  port: 8001
+eureka:
+  client:
+    register-with-eureka: true #是否向注册中心注册自己
+    fetchRegistry: true #是否从注册中心抓取已有的注册信息 默认true，集群必须设置为true
+    service-url:
+      #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://localhost:7001/eureka #单机版
+spring:
+  application:
+    name: stream
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      binders:
+        rabbit:
+          type: rabbit
+      bindings:
+        output:
+          destination: cloud_exchange
+          content-type: application/json
+          binder: rabbit
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署，false即不开启热部署
+      additional-paths: src/main/java #指定热部署的目录
+      exclude: test/**  #指定目录不更新

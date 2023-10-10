@@ -1,6 +1,11 @@
 server:
   port: 3344
 spring:
+  rabbitmq:
+    password: guest
+    username: guest
+    host: localhost
+    port: 5672
   application:
     name: config
   cloud:
@@ -21,3 +26,8 @@ eureka:
     service-url:
       #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
       defaultZone: http://localhost:7001/eureka #单机版
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"

@@ -19,6 +19,9 @@
         <module>gateway9587</module>
         <module>config-center</module>
         <module>config-client</module>
+        <module>stream</module>
+        <module>stream-consumer8002</module>
+        <module>stream-consumer8003</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
