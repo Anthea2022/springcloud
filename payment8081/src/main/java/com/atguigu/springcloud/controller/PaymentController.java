@@ -23,4 +23,9 @@ public class PaymentController {
         System.out.println(port);
         return BaseResponse.success(paymentService.getById(id));
     }
+
+    @GetMapping("/ziplin")
+    public BaseResponse<Object> ziplin() {
+        return BaseResponse.success("ziplin ok");
+    }
 }

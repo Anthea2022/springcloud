@@ -21,4 +21,9 @@ public class Order80Controller {
     public BaseResponse<Payment> selectOne(@RequestParam("id") Integer id) {
         return orderService.selectOne(id);
     }
+
+    @GetMapping("/ziplin")
+    public BaseResponse<Object> ziplin() {
+        return null;
+    }
 }

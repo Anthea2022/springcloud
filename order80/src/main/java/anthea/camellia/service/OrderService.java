@@ -16,4 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OrderService {
     @GetMapping("/payment/getById")
     public BaseResponse<Payment> selectOne(@RequestParam("id") Integer id);
+
+    @GetMapping("/payment/ziplin")
+    public BaseResponse<Object> ziplin();
 }
